@@ -2,5 +2,9 @@ var React = require('react-tools');
 
 module.exports = function(source) {
   this.cacheable();
-  return React.transform(source);
+  var options = {};
+  if (/^(\?|&)harmony=true($|&)/.exec(this.query)) {
+    options.harmony = true;
+  }
+  return React.transform(source, options);
 };
