@@ -4,7 +4,7 @@
   "description": "JSX loader for webpack",
   "main": "index.js",
   "dependencies": {
-    "react-tools": "~0.9.0"
+    "react-tools": "~0.10.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
