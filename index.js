@@ -1,6 +1,8 @@
-var React = require('react-tools');
+var reactTools = require('react-tools');
+var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
   this.cacheable();
-  return React.transform(source);
+  var query = loaderUtils.parseQuery(this.query);
+  return reactTools.transform(source, query);
 };
