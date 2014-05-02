@@ -3,6 +3,13 @@ var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
   this.cacheable();
+
   var query = loaderUtils.parseQuery(this.query);
-  return reactTools.transform(source, query);
+  if (query.insertPragma) {
+    source = '/** @jsx ' + query.insertPragma + ' */' + source;
+  }
+
+  return reactTools.transform(source, {
+    harmony: query.harmony
+  });
 };
