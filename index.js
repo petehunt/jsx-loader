@@ -2,7 +2,7 @@ var reactTools = require('react-tools');
 var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
-  this.cacheable();
+  this.cacheable && this.cacheable()
 
   var query = loaderUtils.parseQuery(this.query);
   if (query.insertPragma) {
