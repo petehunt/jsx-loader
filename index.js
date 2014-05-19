@@ -20,7 +20,7 @@ module.exports = function(source) {
   }
 
   if (options.insertPragma) {
-    source = '/** @jsx ' + query.insertPragma + ' */' + source;
+    source = '/** @jsx ' + options.insertPragma + ' */' + source;
   }
 
   return reactTools.transform(source, options);
