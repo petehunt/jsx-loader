@@ -6,7 +6,7 @@ module.exports = function(source) {
 
   var query = loaderUtils.parseQuery(this.query);
   if (query.insertPragma) {
-    source = '/** @jsx ' + query.insertPragma + ' */' + source;
+    source = '/** @jsx ' + query.insertPragma + ' */\n' + source;
   }
 
   return reactTools.transform(source, {
