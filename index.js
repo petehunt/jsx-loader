@@ -11,7 +11,7 @@ module.exports = function(source) {
 
   var result = reactTools.transformWithDetails(source, {
     harmony: query.harmony,
-    sourceMap: query.sourceMap
+    sourceMap: true
   });
 
   if (result.sourceMap) {
