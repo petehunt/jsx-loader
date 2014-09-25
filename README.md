@@ -1,9 +1,25 @@
 # JSX loader for webpack
 
-## Usage:
+## Usage
 
 ```js
 {..., loader: 'jsx-loader'}
 ```
 
-To enable ES6 features, use `?harmony` in your loader config. To auto insert the pragma required to process the file use the insertPragma parameter e.g. `?insertPragma=React.DOM`.
+## Options
+
+`harmony`: Enables ES6 features.
+
+`insertPragma`: Auto inserts the pragma required to process the file e.g. `insertPragma=React.DOM`.
+
+`stripTypes`: Strips out type annotations.
+
+## Example
+
+```js
+module: {
+  loaders: [
+    {test: /\.jsx$/, loader: 'jsx-loader?harmony&insertPragma=React.DOM&stripTypes'}
+  ]
+}
+```
