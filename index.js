@@ -10,6 +10,7 @@ module.exports = function(source) {
   }
 
   return reactTools.transform(source, {
-    harmony: query.harmony
+    harmony: query.harmony,
+    es5: query.es5
   });
 };
