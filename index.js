@@ -17,10 +17,10 @@ module.exports = function(source) {
     es5: query.es5,
     sourceMap: query.sourceMap
   });
-
-  transform.sourceMap.sources = [sourceFilename];
-  transform.sourceMap.file = current;
-  transform.sourceMap.sourcesContent = [source];
-
+  if (transform.sourceMap) {
+    transform.sourceMap.sources = [sourceFilename];
+    transform.sourceMap.file = current;
+    transform.sourceMap.sourcesContent = [source];
+  }
   this.callback(null, transform.code, transform.sourceMap);
 };
