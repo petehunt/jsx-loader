@@ -1,10 +1,10 @@
 {
   "name": "jsx-loader",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "description": "JSX loader for webpack",
   "main": "index.js",
   "dependencies": {
-    "react-tools": ">=0.12.1",
+    "react-tools": ">=0.13.0",
     "loader-utils": "^0.2.2"
   },
   "scripts": {
