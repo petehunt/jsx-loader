@@ -1,5 +1,4 @@
-var jsxLoader = require('../index'),
-    reactTools = require( 'react-tools' ),
+var reactTools = require( 'react-tools' ),
     assert = require( 'assert' ),
     mockJSX =   'import React from "react"; ' +
                 'export default class Test extends React.Component {' + 
