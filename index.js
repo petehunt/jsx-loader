@@ -16,6 +16,8 @@ module.exports = function(source) {
     harmony: query.harmony,
     stripTypes: query.stripTypes,
     es5: query.es5,
+    es6module: query.es6module,
+    nonStrictEs6module: query.nonStrictEs6module,
     sourceMap: this.sourceMap
   });
   if (transform.sourceMap) {
