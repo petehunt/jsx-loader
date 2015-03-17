@@ -17,6 +17,7 @@ module.exports = function(source) {
     stripTypes: query.stripTypes,
     es5: query.es5,
     es6module: query.es6module,
+    target: query.target,
     nonStrictEs6module: query.nonStrictEs6module,
     sourceMap: this.sourceMap
   });
