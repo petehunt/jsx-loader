@@ -1,13 +1,13 @@
 {
   "name": "jsx-loader",
-  "version": "0.12.2",
+  "version": "0.13.0",
   "description": "JSX loader for webpack",
   "main": "index.js",
   "dependencies": {
     "loader-utils": "^0.2.2"
   },
   "peerDependencies": {
-    "react-tool": "^0.12.0"
+    "react-tool": "^0.13.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
