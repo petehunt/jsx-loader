@@ -5,6 +5,10 @@ module.exports = function(source) {
   this.cacheable && this.cacheable();
 
   var sourceFilename = loaderUtils.getRemainingRequest(this);
+  if (/\.js/.test(sourceFilename) && source.indexOf('/** @jsx React') === -1) {
+    return this.callback(null, source);
+  }
+
   var current = loaderUtils.getCurrentRequest(this);
 
   var query = loaderUtils.parseQuery(this.query);
