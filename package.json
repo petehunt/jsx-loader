@@ -3,8 +3,10 @@
   "version": "0.13.1",
   "description": "JSX loader for webpack",
   "main": "index.js",
+  "peerDependencies": {
+    "react-tools": ">=0.13.1"
+  },
   "dependencies": {
-    "react-tools": ">=0.13.1",
     "loader-utils": "^0.2.2"
   },
   "scripts": {
