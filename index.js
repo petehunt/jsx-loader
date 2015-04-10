@@ -1,6 +1,8 @@
 var reactTools = require('react-tools');
 var loaderUtils = require('loader-utils');
 
+var assign = require('object-assign');
+
 // source map support added by Ben Mosher. #Apache2ChangeNotice
 var SourceMapGenerator = require('source-map').SourceMapGenerator;
 var SourceMapConsumer = require('source-map').SourceMapConsumer;
@@ -15,13 +17,8 @@ module.exports = function(source, incomingMap) {
     source = '/** @jsx ' + query.insertPragma + ' */' + source;
   }
 
-  var transform = reactTools.transformWithDetails(source, {
-    harmony: query.harmony,
-    es6module: query.es6module,
-    stripTypes: query.stripTypes,
-    es5: query.es5,
-    sourceMap: this.sourceMap
-  });
+  var transform = reactTools.transformWithDetails(source,
+    assign(query, {sourceMap: this.sourceMap}));
 
   var outgoingMap = transform.sourceMap;
   if (outgoingMap) {
