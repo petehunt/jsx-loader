@@ -6,18 +6,11 @@ module.exports = function(source) {
 
   var sourceFilename = loaderUtils.getRemainingRequest(this);
   var current = loaderUtils.getCurrentRequest(this);
+  var transformOptions = loaderUtils.parseQuery(this.query);
+  transformOptions.sourceMap = this.sourceMap;
 
-  var query = loaderUtils.parseQuery(this.query);
-  if (query.insertPragma) {
-    source = '/** @jsx ' + query.insertPragma + ' */' + source;
-  }
+  var transform = reactTools.transformWithDetails(source, transformOptions);
 
-  var transform = reactTools.transformWithDetails(source, {
-    harmony: query.harmony,
-    stripTypes: query.stripTypes,
-    es5: query.es5,
-    sourceMap: this.sourceMap
-  });
   if (transform.sourceMap) {
     transform.sourceMap.sources = [sourceFilename];
     transform.sourceMap.file = current;
