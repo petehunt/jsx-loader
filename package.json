@@ -4,7 +4,7 @@
   "description": "JSX loader for webpack",
   "main": "index.js",
   "dependencies": {
-    "jstransform": ">=11.0.0",
+    "jstransform": "11",
     "loader-utils": "^0.2.2"
   },
   "scripts": {
