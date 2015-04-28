@@ -1,4 +1,4 @@
-var reactTools = require('react-tools');
+var jstransform = require('jstransform/simple');
 var loaderUtils = require('loader-utils');
 
 module.exports = function(source) {
@@ -12,7 +12,8 @@ module.exports = function(source) {
     source = '/** @jsx ' + query.insertPragma + ' */' + source;
   }
 
-  var transform = reactTools.transformWithDetails(source, {
+  var transform = jstransform.transform(source, {
+    react: true,
     harmony: query.harmony,
     stripTypes: query.stripTypes,
     es5: query.es5,
