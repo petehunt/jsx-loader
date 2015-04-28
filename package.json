@@ -1,6 +1,6 @@
 {
   "name": "jsx-loader",
-  "version": "0.13.1",
+  "version": "0.13.2",
   "description": "JSX loader for webpack",
   "main": "index.js",
   "dependencies": {
