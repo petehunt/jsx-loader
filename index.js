@@ -15,6 +15,7 @@ module.exports = function(source) {
   var transform = jstransform.transform(source, {
     react: true,
     harmony: query.harmony,
+    es6module: query.es6module,
     stripTypes: query.stripTypes,
     es5: query.es5,
     sourceMap: this.sourceMap
